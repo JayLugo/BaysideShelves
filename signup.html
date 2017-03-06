@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sign up</title>
+<style>
+div.container {
+    width: 100%;
+
+}
+div.container2 {
+    width: 100%;
+	margin-left: 40%;
+	margin-top: -0%;
+    padding: 1em;
+    overflow: hidden;
+
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+nav ul a {
+    text-decoration: none;
+}
+
+article {
+    margin-left: 35%;
+    margin-right: 35%;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    padding: 1em;
+    overflow: hidden;
+}
+.button {
+  display: inline-block;
+  border-radius: 1px;
+  background-color: #FFFFFF;
+  border: 1px solid black;
+  color: #000000;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -10px;
+  transition: 1s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+</style>
+<script>
+function checkandgo(){
+if((document.getElementById("inputEmail").value) == ("")) {
+			alert("Please enter a valid email address");
+			window.location = "signup.html";
+				}
+else if((document.getElementById("inputPassword").value) == ("")) {
+			alert("Please enter a valid password");
+			window.location = "signup.html";
+				}
+else if((document.getElementById("inputPassword").value) == (document.getElementById("inputPasswordcheck").value)) {
+					window.location = "mainpage.html";
+					//enter code here to sent stuff to database here I THINK
+				}
+if((document.getElementById("inputPassword").value) != (document.getElementById("inputPasswordcheck").value)) {
+					alert("Your two passwords don't match");
+					window.location = "signup.html";
+				}}
+</script>
+</head>
+
+<body>
+<div class="container"><article>
+<h1><font face="verdana">Sign Up</h1>
+
+<label for="inputEmail" class="sr-only"><font face="verdana">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+<br><br>
+        <label for="inputPassword" class="sr-only"><font face="verdana">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+		<br><br>
+		<label for="inputPasswordcheck" class="sr-only"><font face="verdana">Enter Password again</label>
+		<input type="password" id="inputPasswordcheck" class="form-control" placeholder="Passwordcheck" required>
+<br><br>
+<button class="button" style="vertical-align:middle" onclick="checkandgo()"><span>Next</span></article></div>
+
+</body>
+</html>
